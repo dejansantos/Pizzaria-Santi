@@ -1,44 +1,50 @@
+/* Reset padrão para remover margens, paddings e corrigir box-sizing */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Estilo geral do corpo da página */
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #fefefe;
-  color: #333;
-  line-height: 1.6;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fonte principal */
+  background-color: #fefefe; /* Cor de fundo clara */
+  color: #333; /* Cor padrão do texto */
+  line-height: 1.6; /* Espaçamento entre linhas */
 }
 
+/* Container principal da página para garantir altura mínima */
 .pagina {
   display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+  flex-direction: column; /* Elementos empilhados verticalmente */
+  min-height: 100vh; /* Altura mínima igual à altura da tela */
 }
 
+/* Estilo do cabeçalho (header fixo no topo) */
 header {
-  background: #d21404;
-  color: white;
-  padding: 20px 40px;
+  background: #d21404; /* Vermelho principal */
+  color: white; /* Texto branco */
+  padding: 20px 40px; /* Espaçamento interno */
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* Espaço entre logo e menu */
   align-items: center;
-  position: sticky;
+  position: sticky; /* Fica fixo no topo ao rolar */
   top: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  z-index: 1000; /* Fica por cima de outros elementos */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Sombra sutil abaixo */
 }
 
+/* Estilo da imagem da logo */
 .logo-img {
   width: 190px;
   height: 130px;
-  border-radius: 50%;
+  border-radius: 50%; /* Formato redondo */
   object-fit: cover;
   border: 3px solid white;
-  box-shadow: 0 0 8px rgba(255,255,255,0.7);
+  box-shadow: 0 0 8px rgba(255,255,255,0.7); /* Brilho ao redor */
 }
 
+/* Estilo dos links do menu de navegação */
 .menu a {
   color: white;
   text-decoration: none;
@@ -47,16 +53,18 @@ header {
   font-size: 1.1rem;
   padding: 8px 14px;
   border-radius: 6px;
-  transition: background 0.3s ease, color 0.3s ease;
+  transition: background 0.3s ease, color 0.3s ease; /* Animação suave */
 }
 
+/* Efeito hover nos links do menu */
 .menu a:hover {
   background: white;
-  color: #d21404;
+  color: #d21404; /* Inversão de cores ao passar o mouse */
 }
 
+/* Seção principal de destaque com imagem de fundo */
 .hero {
-  background-image: url('img/fundo.jpg'); /* coloque uma imagem bonita de pizza */
+  background-image: url('img/fundo.jpg'); /* Imagem de fundo */
   background-size: cover;
   background-position: center;
   color: white;
@@ -65,13 +73,15 @@ header {
   position: relative;
 }
 
+/* Camada escura sobre a imagem de fundo */
 .hero::before {
   content: "";
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.5); /* Sombra escura transparente */
 }
 
+/* Conteúdo dentro da seção hero, acima da sombra */
 .hero-content {
   position: relative;
   z-index: 1;
@@ -79,16 +89,19 @@ header {
   margin: 0 auto;
 }
 
+/* Título da seção hero */
 .hero h1 {
   font-size: 3rem;
   margin-bottom: 20px;
 }
 
+/* Parágrafo da seção hero */
 .hero p {
   font-size: 1.3rem;
   margin-bottom: 30px;
 }
 
+/* Botão de chamada para ação (Call To Action) */
 .btn-cta {
   background: #d21404;
   color: white;
@@ -99,11 +112,12 @@ header {
   transition: background 0.3s ease;
 }
 
+/* Efeito hover no botão */
 .btn-cta:hover {
-  background: #a80e03;
+  background: #a80e03; /* Vermelho mais escuro */
 }
 
-
+/* Conteúdo principal */
 main {
   flex: 1;
   max-width: 1200px;
@@ -112,40 +126,44 @@ main {
   width: 100%;
 }
 
+/* Espaçamento entre seções */
 section {
   margin-bottom: 100px;
 }
-/* Seção Sobre */
+
+/* Seção "Sobre" */
 .sobre {
   background: #fff3f3;
   padding: 40px;
   border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(210, 20, 4, 0.1);
+  box-shadow: 0 4px 12px rgba(210, 20, 4, 0.1); /* Sombra leve */
   margin-bottom: 60px;
   text-align: center;
 }
 
+/* Título da seção sobre */
 .sobre h2 {
   font-size: 2.5rem;
   margin-bottom: 20px;
   color: #d21404;
 }
 
+/* Parágrafo da seção sobre */
 .sobre p {
   font-size: 1.3rem;
   line-height: 1.8;
   text-align: justify;
 }
 
-
-/* Galeria de Cards */
+/* Galeria de cards de produtos */
 .galeria {
   display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
+  flex-wrap: wrap; /* Quebra para a linha de baixo se necessário */
+  gap: 30px; /* Espaço entre os cards */
   justify-content: center;
 }
 
+/* Estilo de cada card */
 .card {
   background: white;
   width: 260px;
@@ -157,30 +175,34 @@ section {
   text-align: center;
 }
 
+/* Efeito ao passar o mouse no card */
 .card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 10px 25px rgba(210, 20, 4, 0.3);
+  transform: translateY(-8px); /* Eleva o card */
+  box-shadow: 0 10px 25px rgba(210, 20, 4, 0.3); /* Sombra vermelha */
 }
 
+/* Imagem do card */
 .card-img {
   width: 100%;
   height: 170px;
-  object-fit: cover;
+  object-fit: cover; /* Mantém proporção */
 }
 
+/* Título do card */
 .card h3 {
   margin: 15px 0 10px;
   font-size: 1.4rem;
   color: #d21404;
 }
 
+/* Texto do card */
 .card p {
   padding: 0 15px 20px;
   font-size: 1rem;
   color: #555;
 }
 
-/* Rodapé */
+/* Rodapé do site */
 footer {
   background: #d21404;
   color: white;
@@ -188,11 +210,12 @@ footer {
   padding: 20px 0;
   font-weight: 600;
   font-size: 1rem;
-  box-shadow: 0 -3px 10px rgba(210, 20, 4, 0.4);
+  box-shadow: 0 -3px 10px rgba(210, 20, 4, 0.4); /* Sombra para cima */
 }
 
-/* Responsivo */
+/* Regras para dispositivos móveis */
 @media (max-width: 768px) {
+  /* Cabeçalho em coluna no celular */
   header {
     flex-direction: column;
     padding: 20px;
@@ -213,7 +236,7 @@ footer {
   }
 
   .galeria {
-    flex-direction: column;
+    flex-direction: column; /* Cards empilhados no mobile */
     gap: 25px;
   }
 
